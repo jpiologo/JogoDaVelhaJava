@@ -27,6 +27,38 @@ public class Matriz {
         }
     }
 
+    public boolean verificaVencedor(char jogador) {
+        //Verifica linhas, colunas e diagonais.
 
+        for (int i = 0; i < 3; i++) {
+            //Verificando Linhas:
+            if (tabuleiro[i][0] == jogador && tabuleiro[i][1] == jogador && tabuleiro[i][2] == jogador) {
+                return true;
+            }
+            //Verificando Colunas:
+            if (tabuleiro[0][i] == jogador && tabuleiro[1][i] == jogador && tabuleiro[2][i] == jogador) {
+                return true;
+            }
+        }
+        //Verificando diagonais.
+        if (tabuleiro[0][0] == jogador && tabuleiro[1][1] == jogador && tabuleiro[2][2] == jogador) {
+            return true;
+        }
+        if (tabuleiro[0][2] == jogador && tabuleiro[1][1] == jogador && tabuleiro[2][0] == jogador) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean verificaEmpate() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (tabuleiro[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
 }
