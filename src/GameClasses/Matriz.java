@@ -8,7 +8,8 @@ public class Matriz {
             {' ', ' ', ' '}
     };
 
-    public void exibirTabuleiro() {
+    public void exibirTabuleiro() { //Exibe o tabuleiro de forma gráfica.
+        System.out.println("\n");
         for (int i = 0; i < 3; i++) {
             System.out.println(" " + tabuleiro[i][0] + " | " + tabuleiro[i][1] + " | " + tabuleiro[i][2]);
             if (i < 2) {
